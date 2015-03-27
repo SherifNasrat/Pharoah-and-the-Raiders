@@ -9,18 +9,18 @@ namespace Maps
 {
     class Camera
     {
-        private Matrix transform;
-        public Matrix Transform
+        private Matrix transform; //Defines a Matrix
+        public Matrix Transform // Getter for the defined Matrix
         {
             get { return transform; }
         }
-        private Vector2 centre;
-        private Viewport viewport;
-        public Camera(Viewport newViewPort)
+        private Vector2 centre; //(X,Y) 
+        private Viewport viewport; //Defines the window in which we see everything.
+        public Camera(Viewport newViewPort) //Setter for the viewport object.
         {
             viewport = newViewPort;
         }
-        public void Update(Vector2 position, int xOffset, int yOffset)
+        public void Update(Vector2 position, int xOffset, int yOffset) //Player.position, map.width, map.height
         {
             if (position.X < viewport.Width / 2)
                 centre.X = viewport.Width / 2;
